@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+*.pyc
+.env
+node_modules/
+dist/
+build/
+data/
+mysql-data/
+*.log

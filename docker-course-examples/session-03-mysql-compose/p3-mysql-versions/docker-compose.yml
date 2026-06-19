@@ -1,0 +1,28 @@
+services:
+  mysql8:
+    image: mysql:8.0
+    container_name: mysql8
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: old_project
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql8-data:/var/lib/mysql
+
+  mysql9:
+    image: mysql:9.0
+    container_name: mysql9
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: new_project
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql9-data:/var/lib/mysql
+
+volumes:
+  mysql8-data:
+  mysql9-data:

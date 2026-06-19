@@ -1,0 +1,16 @@
+services:
+  web:
+    image: nginx
+    container_name: practice-nginx
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - ./html:/usr/share/nginx/html:ro
+
+  redis:
+    image: redis:7-alpine
+    container_name: practice-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"

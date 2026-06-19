@@ -1,0 +1,16 @@
+services:
+  web:
+    # TODO: nginx, port 8084:80, ./html bind mount
+
+  db:
+    # TODO: mysql:8.0
+    # TODO: 設定 MYSQL_ROOT_PASSWORD、MYSQL_DATABASE、MYSQL_USER、MYSQL_PASSWORD
+    # TODO: port 3308:3306
+    # TODO: named volume 掛到 /var/lib/mysql
+
+  redis:
+    # TODO: redis:7-alpine
+    # TODO: port 6380:6379
+
+volumes:
+  # TODO: 定義 MySQL volume
