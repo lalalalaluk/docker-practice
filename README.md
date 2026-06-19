@@ -22,6 +22,9 @@
 - `session-01-basics`：第一堂，Docker 概念、第一個容器、Nginx/Apache 靜態頁。
 - `session-02-flask-volume`：第二堂，Flask 容器、容器生命週期、Volume。
 - `session-03-mysql-compose`：第三堂，MySQL、Docker Compose、多容器管理。
+- `session-04-dockerfile-resources`：第四堂，Dockerfile、映像檔優化、資源限制。
+- `session-05-cicd-github-actions`：第五堂，CI/CD 概念、GitHub Actions、自動測試與 Docker build。
+- `session-06-github-actions-advanced`：第六堂，完整 Flask CI/CD、cache、matrix、health check、Compose capstone。
 
 ## 使用方式
 
