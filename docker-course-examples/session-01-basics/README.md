@@ -18,6 +18,12 @@ docker pull python:3.11-alpine
 docker images | findstr python
 ```
 
+觀察重點：
+
+- 只要先看 `docker images` 的 `SIZE` 欄位。
+- `python:3.11`、`python:3.11-slim`、`python:3.11-alpine` 是同一個 Python 版本的不同 Image 變體。
+- 大小差異主要來自底層系統與預裝工具不同；第一堂只需要理解這件事，不需要看懂每個 layer。
+
 ## 練習
 
 - `p2-nginx-custom-page`：啟動 Nginx 並自訂歡迎頁面。
@@ -27,5 +33,5 @@ docker images | findstr python
 
 ```powershell
 docker rm -f course-nginx course-httpd
-docker rmi python:3.11 python:3.11-alpine
+docker rmi python:3.11 python:3.11-slim python:3.11-alpine
 ```
