@@ -1,6 +1,8 @@
 # Docker 基礎教學
 
-這個 repo 提供 Docker 基礎教學的上課投影片與實作範例程式碼。
+這個 repo 提供 Docker 基礎教學的上課投影片。
+
+課程使用的指令、Dockerfile、Compose 檔與 GitHub Actions workflow 都已放在投影片的「範例程式碼」頁面中，避免投影片與範例檔分開維護後內容不同步。
 
 ## 投影片
 
@@ -13,24 +15,10 @@
 | 第 5 堂 | CI/CD 概念與 GitHub Actions 入門 | [docker-session5-cicd-github-actions.pptx](slides/docker-session5-cicd-github-actions.pptx) |
 | 第 6 堂 | GitHub Actions 進階實作與課程總結 | [docker-session6-github-actions-advanced.pptx](slides/docker-session6-github-actions-advanced.pptx) |
 
-## 範例程式碼
-
-範例程式碼放在 [docker-course-examples](docker-course-examples/)。
-
-目前包含：
-
-- `session-01-basics`：第一堂，Docker 安裝與 hello-world、Docker 概念、Nginx/Apache 靜態頁。
-- `session-02-flask-volume`：第二堂，Flask 容器、容器生命週期、Volume。
-- `session-03-mysql-compose`：第三堂，MySQL、Docker Compose、多容器管理。
-- `session-04-dockerfile-resources`：第四堂，Dockerfile、映像檔優化、資源限制。
-- `session-05-cicd-github-actions`：第五堂，CI/CD 概念、GitHub Actions、自動測試與 Docker build。
-- `session-06-github-actions-advanced`：第六堂，完整 Flask CI/CD、cache、matrix、health check、Compose capstone。
-
 ## 使用方式
 
 1. 先下載或 clone 這個 repo。
 2. 打開對應堂數的 PPT。
-3. 進入 `docker-course-examples` 的對應資料夾。
-4. 依照該資料夾的 `README.md` 操作。
+3. 依照投影片中的「範例程式碼」頁面建立檔案並操作。
 
 本課程以 Windows + Docker Desktop + PowerShell 為主要環境。
