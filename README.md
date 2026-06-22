@@ -13,7 +13,7 @@
 | 第 3 堂 | MySQL、Docker Compose 與多容器管理 | [docker-session3-mysql-compose.pptx](slides/docker-session3-mysql-compose.pptx) |
 | 第 4 堂 | Dockerfile、映像檔優化與資源配置 | [docker-session4-dockerfile-resources.pptx](slides/docker-session4-dockerfile-resources.pptx) |
 | 第 5 堂 | CI/CD 與 GitHub Actions 實戰 | [docker-session5-cicd-github-actions.pptx](slides/docker-session5-cicd-github-actions.pptx) |
-| 第 6 堂 | React + Flask + MySQL 全端專題 | [docker-session6-fullstack-todo.pptx](slides/docker-session6-fullstack-todo.pptx) |
+| 第 6 堂 | Docker Compose 全端專題：React + Flask + MySQL | [docker-session6-fullstack-todo.pptx](slides/docker-session6-fullstack-todo.pptx) |
 
 ## 使用方式
 
