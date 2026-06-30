@@ -1,6 +1,6 @@
 # Docker 基礎教學
 
-這個 repo 提供 Docker 基礎教學的上課投影片。
+這個 repo 提供 Docker 基礎教學的上課投影片與第 6 堂除錯情境題。
 
 課程使用的指令、Dockerfile、Compose 檔與 GitHub Actions workflow 都已放在投影片的「範例程式碼」頁面中，避免投影片與範例檔分開維護後內容不同步。
 
@@ -22,3 +22,25 @@
 3. 依照投影片中的「範例程式碼」頁面建立檔案並操作。
 
 本課程以 Windows + Docker Desktop + PowerShell 為主要環境。
+
+## 第 6 堂除錯情境題
+
+每一題都是一個獨立資料夾，放在 [session-06-debug-scenarios](session-06-debug-scenarios)。
+
+學生可以進入任一題資料夾後執行：
+
+```powershell
+copy .env.example .env
+docker compose up -d --build
+```
+
+除錯時建議固定先看：
+
+```powershell
+docker compose ps
+docker compose logs frontend
+docker compose logs backend
+docker compose logs db
+curl http://localhost:8080/api/health
+curl http://localhost:8080/api/products
+```
