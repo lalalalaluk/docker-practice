@@ -1,8 +1,8 @@
 # Docker 基礎教學
 
-這個 repo 提供 Docker 基礎教學的上課投影片與第 6 堂除錯情境題。
+這個 repo 提供 Docker 基礎教學的上課投影片、第 6 堂全端專題練習檔，以及第 6 堂除錯情境題。
 
-課程使用的指令、Dockerfile、Compose 檔與 GitHub Actions workflow 都已放在投影片的「範例程式碼」頁面中，避免投影片與範例檔分開維護後內容不同步。
+第 6 堂不要求從投影片複製完整 React / Flask 程式碼，請直接使用 `session-06-fullstack-todo/starter` 當練習起點。
 
 ## 投影片
 
@@ -19,9 +19,36 @@
 
 1. 先下載或 clone 這個 repo。
 2. 打開對應堂數的 PPT。
-3. 依照投影片中的「範例程式碼」頁面建立檔案並操作。
+3. 第 1 到 5 堂依照投影片操作。
+4. 第 6 堂請搭配 `session-06-fullstack-todo/starter` 練習，完成後可參考 `solution`。
 
 本課程以 Windows + Docker Desktop + PowerShell 為主要環境。
+
+## 第 6 堂全端專題
+
+第 6 堂範例放在 [session-06-fullstack-todo](session-06-fullstack-todo)。
+
+```text
+session-06-fullstack-todo/
+  ├── starter/   # 學生練習用，已提供 React / Flask / SQL
+  └── solution/  # 完整解答
+```
+
+學生請從 `starter` 開始：
+
+```powershell
+cd session-06-fullstack-todo\starter
+```
+
+需要練習完成的檔案包含：
+
+- `backend/Dockerfile`
+- `backend/.dockerignore`
+- `frontend/Dockerfile`
+- `frontend/.dockerignore`
+- `frontend/nginx.conf`
+- `compose.yaml`
+- `.github/workflows/cicd.yml`
 
 ## 第 6 堂除錯情境題
 
