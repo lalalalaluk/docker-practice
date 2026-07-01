@@ -1,6 +1,6 @@
-# 情境 4：前端改了，畫面卻沒有變
+# Practice 4
 
-這題需要先跑過一次，再修改 React 原始碼，才能重現問題。
+這題需要先跑過一次，再修改前端原始碼，才能重現問題。
 
 ## 重現
 
@@ -11,15 +11,9 @@ copy .env.example .env
 docker compose up -d --build
 ```
 
-打開 `http://localhost:8080`，確認標題是 `Product List`。
+打開 `http://localhost:8080`，確認畫面正常。
 
-接著修改 `frontend/src/App.jsx`，把標題改成：
-
-```jsx
-<h1>Product Catalog</h1>
-```
-
-只重新執行：
+接著修改前端標題，只重新執行：
 
 ```powershell
 docker compose up -d
@@ -27,7 +21,7 @@ docker compose up -d
 
 ## 現象
 
-瀏覽器仍然看到舊標題。
+瀏覽器仍然看到舊畫面。
 
 ## 任務
 

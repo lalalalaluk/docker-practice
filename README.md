@@ -54,6 +54,8 @@ cd session-06-fullstack-todo\starter
 
 每一題都是一個獨立資料夾，放在 [session-06-debug-scenarios](session-06-debug-scenarios)。
 
+題目資料夾命名為 `practice-1`、`practice-2`、`practice-3`，不會在檔名中提示故障原因。解題思路與解答集中放在 `session-06-debug-scenarios/solution`，每題一個 markdown 檔。
+
 學生可以進入任一題資料夾後執行：
 
 ```powershell

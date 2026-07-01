@@ -2,7 +2,7 @@
 
 這是 Docker 第 6 堂的學生練習版。
 
-React、Flask、測試、前端樣式、package/requirements 和範例資料 SQL 已經先放好。課堂時間請專注在 Docker 相關檔案：
+React、Flask、測試、前端樣式和 package/requirements 已經先放好。課堂時間請專注在 Docker 相關檔案：
 
 - `backend/Dockerfile`
 - `backend/.dockerignore`
@@ -10,7 +10,8 @@ React、Flask、測試、前端樣式、package/requirements 和範例資料 SQL
 - `frontend/.dockerignore`
 - `frontend/nginx.conf`
 - `compose.yaml`
-- `.github/workflows/cicd.yml`
+
+`.github/workflows/cicd.yml` 已提供簡化版範本。這堂課的 CI 只做測試與 image build 檢查，不 push Docker Hub，也不在 CI 裡啟動整套 Compose。
 
 ## Target architecture
 
@@ -36,6 +37,9 @@ MySQL + product-db-data volume
 ```text
 starter/
   ├── .env.example
+  ├── .github/
+  │   └── workflows/
+  │       └── cicd.yml
   ├── frontend/
   │   ├── package.json
   │   ├── package-lock.json
@@ -45,11 +49,9 @@ starter/
   │   ├── app.py
   │   ├── requirements.txt
   │   └── test_app.py
-  └── db/
-      └── init.sql
 ```
 
-`db/init.sql` 是課堂範例資料，目的是讓本章可以專心練 Docker Compose。正式專案通常會用 migration 或部署流程管理 schema。
+範例商品資料已經放在 backend 程式裡。本章先專心練 Docker Compose 怎麼把三個服務接起來。
 
 ## Goal
 
@@ -91,7 +93,14 @@ docker compose down -v
 
 1. 安裝 backend dependencies
 2. 執行 pytest
-3. 用 Docker Compose build 並啟動 frontend、backend、db
-4. 透過 frontend proxy 檢查 `/api/health`
-5. 檢查 `/api/products`
-6. push 到 main 時，把 frontend/backend images 推到 Docker Hub
+3. build backend image，確認 `backend/Dockerfile` 沒問題
+4. build frontend image，確認 `frontend/Dockerfile` 沒問題
+
+完整的 Compose 串接檢查先留在本機執行：
+
+```powershell
+cp .env.example .env
+docker compose up -d --build
+curl http://localhost:8080/api/health
+curl http://localhost:8080/api/products
+```

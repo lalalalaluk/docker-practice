@@ -1,4 +1,4 @@
-# 情境 6：/api/health 過了，但 /api/products 失敗
+# Practice 6
 
 ## 啟動
 
@@ -29,10 +29,4 @@ curl http://localhost:8080/api/health
 curl -i http://localhost:8080/api/products
 docker compose logs backend
 docker compose exec db mysql -u product_user -p product_app
-```
-
-進入 MySQL 後可以查：
-
-```sql
-SHOW TABLES;
 ```

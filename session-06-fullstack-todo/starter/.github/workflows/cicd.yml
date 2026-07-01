@@ -10,7 +10,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: solution/backend
+        working-directory: backend
 
     steps:
       - name: Checkout code
@@ -36,7 +36,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build backend image
-        run: docker build -t product-backend:test ./solution/backend
+        run: docker build -t product-backend:test ./backend
 
       - name: Build frontend image
-        run: docker build -t product-frontend:test ./solution/frontend
+        run: docker build -t product-frontend:test ./frontend

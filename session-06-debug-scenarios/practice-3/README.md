@@ -1,4 +1,4 @@
-# 情境 3：Nginx proxy 寫錯，前端正常但 API 失敗
+# Practice 3
 
 ## 啟動
 
@@ -9,9 +9,9 @@ docker compose up -d --build
 
 ## 現象
 
-- `http://localhost:8080` 看得到前端
+- 首頁可以開
 - `/api/products` 失敗
-- frontend logs 會出現 upstream 相關錯誤
+- frontend logs 有錯誤訊息
 
 ## 任務
 
