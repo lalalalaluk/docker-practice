@@ -1,8 +1,8 @@
 # Practice 7
 
-這題要把本資料夾內容當成一個 GitHub repo 根目錄來練習。
+這題看 GitHub Actions。
 
-## 本機驗證
+## 本機先確認
 
 ```powershell
 copy .env.example .env
@@ -13,19 +13,11 @@ docker compose down -v
 
 ## 現象
 
-本機可以正常跑，但 CI 會失敗。
+本機正常，CI 失敗。
 
-## 任務
+## 先查
 
-回答這四件事：
-
-1. 失敗的是哪一個 job？
-2. 第一個有用的 error message 是什麼？
-3. 是測試失敗、Docker build 失敗，還是檔案路徑錯？
-4. 修完後要怎麼重新觸發 workflow？
-
-## 建議檢查
-
-- workflow 的工作目錄
-- workflow 裡的相對路徑
-- Docker build context
+- 失敗的 job
+- 失敗的 step
+- 第一個 error message
+- workflow 的路徑設定

@@ -20,6 +20,13 @@
 
 3. 如果 `localhost:5000` 不能連，但 `localhost:8080/api/...` 可以，代表 backend 沒有對外暴露，但 frontend/Nginx 仍可在 Compose network 內呼叫 backend。
 
+開發時如果要直接連 backend：
+
+```powershell
+docker compose -f compose.yaml -f compose.dev.yml up -d --build
+curl -i http://localhost:5000/api/health
+```
+
 檢查 `compose.yaml`：
 
 ```yaml
@@ -32,3 +39,5 @@ backend:
 ```
 
 原因：正式部署通常只暴露入口層。backend 和 db 留在內部 network。
+
+`compose.dev.yml` 只給本機除錯用。

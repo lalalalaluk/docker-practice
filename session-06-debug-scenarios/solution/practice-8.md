@@ -13,7 +13,7 @@
 2. 從資料來源往外查：
 
    ```powershell
-   docker compose exec db mysql -u product_user -p product_app
+   docker compose exec db mysql -u testuser -p testdb
    ```
 
    ```sql
@@ -24,7 +24,7 @@
 
 4. 最後檢查 frontend table 是否有 render 新欄位。
 
-修改 `db/init.sql`：
+修改 `backend/app.py` 的建表欄位：
 
 ```sql
 Category VARCHAR(50) NOT NULL DEFAULT '未分類',
@@ -32,9 +32,8 @@ Category VARCHAR(50) NOT NULL DEFAULT '未分類',
 
 並調整 seed data：
 
-```sql
-INSERT INTO Product (Name, Price, Category, Stock) VALUES
-  ('藍牙耳機', 1290.00, '3C', 50);
+```python
+("藍牙耳機", 1290.00, "3C", 50),
 ```
 
 修改 `backend/app.py` 的 SQL：

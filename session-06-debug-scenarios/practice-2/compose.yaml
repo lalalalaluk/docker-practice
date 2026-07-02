@@ -10,8 +10,6 @@ services:
   backend:
     build:
       context: ./backend
-    ports:
-      - "5000:5000"
     environment:
       MYSQL_HOST: db
       MYSQL_PORT: 3306
@@ -19,8 +17,7 @@ services:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     depends_on:
-      db:
-        condition: service_healthy
+      - db
 
   db:
     image: mysql:8.0
@@ -31,17 +28,6 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     volumes:
       - product-db-data:/var/lib/mysql
-      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
-    healthcheck:
-      test:
-        - CMD
-        - mysqladmin
-        - ping
-        - "-h"
-        - localhost
-      interval: 5s
-      timeout: 5s
-      retries: 10
 
 volumes:
   product-db-data:

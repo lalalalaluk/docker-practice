@@ -20,14 +20,14 @@
 3. 再進 DB container 看實際 schema：
 
    ```powershell
-   docker compose exec db mysql -u product_user -p product_app
+   docker compose exec db mysql -u testuser -p testdb
    ```
 
    ```sql
    SHOW TABLES;
    ```
 
-修正方向：讓 `db/init.sql` 建立的 table 名稱和 backend SQL 查詢一致，例如都使用：
+修正方向：讓 backend 建表程式和查詢 SQL 的 table 名稱一致，例如都使用：
 
 ```sql
 Product

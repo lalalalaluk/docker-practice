@@ -15,7 +15,7 @@
 
 2. 到 GitHub Actions 看失敗 job 和失敗 step，找第一個 error message。
 
-3. 如果錯誤是找不到檔案、找不到 `compose.yaml`、找不到 requirements，通常是 working directory 或相對路徑錯。
+3. 如果錯誤是找不到資料夾或找不到 requirements，通常是 working directory 或相對路徑錯。
 
 修正 `.github/workflows/cicd.yml`：
 
@@ -25,20 +25,11 @@ defaults:
     working-directory: backend
 ```
 
-Compose 相關指令使用根目錄路徑：
-
-```yaml
-run: cp .env.example .env
-run: docker compose -f compose.yaml --env-file .env up -d --build
-run: docker compose -f compose.yaml --env-file .env logs
-run: docker compose -f compose.yaml --env-file .env down -v
-```
-
 Docker build context 也使用根目錄下的資料夾：
 
 ```yaml
-context: backend
-context: frontend
+run: docker build -t product-backend:test ./backend
+run: docker build -t product-frontend:test ./frontend
 ```
 
 觀念：CI runner 的工作目錄可能和你本機操作的位置不同。

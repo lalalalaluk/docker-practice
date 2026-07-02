@@ -13,7 +13,7 @@
 2. 進 DB container 看資料表內容：
 
    ```powershell
-   docker compose exec db mysql -u product_user -p product_app
+   docker compose exec db mysql -u testuser -p testdb
    ```
 
    ```sql
@@ -30,6 +30,6 @@ docker compose up -d --build
 curl http://localhost:8080/api/products
 ```
 
-原因：`init.sql` 只會在 MySQL 資料目錄第一次初始化時執行。volume 已存在時，MySQL 會沿用舊資料，不會重跑初始化 SQL。
+原因：backend 只會在 `Product` table 沒資料時塞入範例商品。volume 已存在時，MySQL 會沿用舊資料，不會因為你改了 seed data 就自動重建。
 
 注意：`down -v` 會刪掉資料庫 volume，只適合課堂練習，不是正式資料庫更新方式。
